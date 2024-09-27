@@ -1,6 +1,4 @@
-
 import java.io.IOException;
-
 public class RunReadFile {
 
 	public static void main(String[] args) throws IOException {

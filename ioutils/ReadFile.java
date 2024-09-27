@@ -1,12 +1,8 @@
-
-
-
 import java.io.*;
-
 public class ReadFile {
 
 	public String leer() throws IOException {
-		FileReader fr = new FileReader("./ioutils/a.txt");
+		FileReader fr = new FileReader("./a.txt");
 		BufferedReader br = new BufferedReader(fr);
 		String linea = br.readLine();
 		String textocompleto = "";

@@ -1,27 +1,23 @@
-
 import java.io.*;
 
 public class CopyFile {
 
-	public String leerporletra() throws IOException {
+	public String copiar() throws IOException {
 		FileReader fr = new FileReader("./a.txt");
-		System.out.println(System.getProperty("user.dir"));
-		BufferedReader br = new BufferedReader(fr);
-		char letra = (char)br.read();
+		char letra = (char)fr.read();
 		String frase = "";
+		FileWriter fw = new FileWriter("./copiedfile.txt");
+		int letrascopiadas = 0;
 		while (letra != (char)-1) {
-			frase = frase + letra;
-			letra = (char)br.read();
+			fw.write(letra);
+			letra = (char)fr.read();
+			letrascopiadas++;
 		}
-		br.close();
+		fr.close();
+		fw.close();
+		System.out.println("Se copiaron " + letrascopiadas + " letras");
 		return frase;
 	}
-
-	public void copiar() throws IOException {
-		String frase = leerporletra();
-		FileWriter fw = new FileWriter("./copiedfile.txt");
-		fw.write(frase);
-		fw.close();
-	}
+	
 }
 
