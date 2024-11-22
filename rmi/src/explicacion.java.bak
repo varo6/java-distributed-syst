@@ -1,0 +1,21 @@
+//Declaro interfaz rmi
+public interface CalculoMatricial extends Remote {
+    public double determinante(Matriz A);
+
+    public Matriz multiplicar(Matriz A, Matriz B);
+}
+
+//Ahora tocará implementar la interfaz ahora tengo que darle color. Deriva de una clase llamada UnicastRemoteObject
+public class CalculoImp implements CalculoMatricial extemds UnicastRemoteObject {
+    public double determinante(Matriz A) {
+        return A.determinante();
+    }
+//Aqui sería la implementación
+    public Matriz multiplicar(Matriz A, Matriz B) {
+        return A.multiplicar(B);
+    }
+}
+//Poner en marcha el registro: Se puede por consola y por código
+//Implementar el cliente.
+//Buscar objeto en el RMIRegistry
+//Invocar funciones
